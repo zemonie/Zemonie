@@ -1,0 +1,512 @@
+/* ========================================
+   VenturaFin - Mobile Responsive Fixes
+   Fokus: Chart responsif & semua halaman
+   ======================================== */
+
+/* ============================================
+   CHART CONTAINER - Responsive Fix
+   ============================================ */
+
+/* Pastikan canvas chart mengisi container */
+.chart-body canvas {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Chart card harus bisa menyesuaikan tinggi */
+.chart-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-body {
+    position: relative;
+    flex: 1;
+}
+
+/* Report chart containers juga */
+.report-chart-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.report-chart-body {
+    position: relative;
+    flex: 1;
+}
+
+/* ============================================
+   MOBILE: <= 768px
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* --- Charts --- */
+    .chart-body {
+        height: 240px !important;
+        padding: 12px 12px 16px !important;
+    }
+
+    .chart-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 14px 16px 0 !important;
+    }
+
+    .chart-header > div:first-child {
+        width: 100%;
+    }
+
+    .chart-header h2 {
+        font-size: 0.9rem !important;
+        margin-bottom: 6px;
+    }
+
+    .chart-legend {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .legend-item {
+        font-size: 11px;
+    }
+
+    /* Period selector penuh lebar */
+    .period-selector {
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .period-btn {
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* Charts row jadi 1 kolom */
+    .charts-row {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+    }
+
+    /* Report charts */
+    .report-charts {
+        grid-template-columns: 1fr !important;
+        gap: 14px;
+    }
+
+    .report-chart-body {
+        height: 220px !important;
+        padding: 10px 12px 14px !important;
+    }
+}
+
+/* ============================================
+   MOBILE KECIL: <= 480px
+   ============================================ */
+@media (max-width: 480px) {
+
+    /* --- Charts --- */
+    .chart-body {
+        height: 200px !important;
+        padding: 10px 10px 14px !important;
+    }
+
+    .chart-header {
+        padding: 12px 12px 0 !important;
+        gap: 8px;
+    }
+
+    .chart-header h2 {
+        font-size: 0.825rem !important;
+    }
+
+    .chart-legend {
+        gap: 6px;
+    }
+
+    .legend-item {
+        font-size: 10px;
+    }
+
+    .legend-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .period-selector {
+        padding: 2px;
+    }
+
+    .period-btn {
+        padding: 4px 9px;
+        font-size: 9px;
+    }
+
+    /* Report charts */
+    .report-chart-body {
+        height: 185px !important;
+        padding: 8px 10px 12px !important;
+    }
+
+    /* --- Summary Cards: 1 kolom di mobile kecil --- */
+    .summary-cards {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Card Value tidak terpotong --- */
+    .card-value {
+        font-size: 1rem !important;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    /* --- Table: scroll horizontal smooth --- */
+    .table-wrapper,
+    .transactions-table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+    }
+
+    /* Tabel tidak menyempit paksa */
+    .data-table,
+    .transactions-table {
+        min-width: 480px;
+    }
+
+    /* --- Page heading lebih compact --- */
+    .page-heading {
+        margin-bottom: 16px;
+    }
+
+    .page-heading h1 {
+        font-size: 1.1rem;
+    }
+
+    /* --- Section header stack --- */
+    .section-header {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* --- Report cards: 1 kolom --- */
+    .report-cards {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* --- Login page --- */
+    .login-card {
+        margin: 12px;
+        padding: 24px 20px !important;
+    }
+}
+
+/* ============================================
+   MOBILE SANGAT KECIL: <= 360px
+   ============================================ */
+@media (max-width: 360px) {
+
+    .chart-body {
+        height: 170px !important;
+    }
+
+    .report-chart-body {
+        height: 160px !important;
+    }
+
+    .card-value {
+        font-size: 0.9rem !important;
+    }
+
+    .summary-card {
+        padding: 12px !important;
+        gap: 8px;
+    }
+
+    .card-icon {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px;
+    }
+
+    .card-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+/* ============================================
+   TOUCH IMPROVEMENTS - Semua ukuran mobile
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* Tombol lebih mudah disentuh */
+    .btn,
+    .nav-item,
+    .page-btn,
+    .action-btn,
+    .period-btn,
+    .toggle-btn {
+        min-height: 40px;
+    }
+
+    .nav-item {
+        min-height: 44px;
+    }
+
+    /* Sidebar overlay tap to close */
+    .sidebar-overlay {
+        cursor: pointer;
+    }
+
+    /* Input lebih nyaman di mobile */
+    input, select, textarea {
+        font-size: 16px !important; /* Mencegah zoom otomatis di iOS */
+    }
+
+    /* Tabel aksi selalu terlihat di mobile (tidak perlu hover) */
+    .action-btns {
+        opacity: 1 !important;
+    }
+
+    .kategori-item-actions {
+        opacity: 1 !important;
+    }
+
+    /* Dropdown user di kanan tidak keluar layar */
+    .user-dropdown {
+        right: 0;
+        left: auto;
+        max-width: calc(100vw - 24px);
+    }
+
+    /* Toast notification lebih kecil */
+    .toast {
+        bottom: 16px;
+        right: 12px;
+        left: 12px;
+        border-radius: var(--radius-md);
+        justify-content: center;
+        font-size: 0.8125rem;
+    }
+
+    /* Modal lebih rapi */
+    .modal-card {
+        width: calc(100% - 24px) !important;
+        max-width: 100% !important;
+        margin: 12px !important;
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+
+    .modal-actions .btn {
+        width: 100%;
+    }
+
+    /* Pie chart legend lebih kecil di mobile */
+    .chart-card .chart-body canvas {
+        max-height: 100%;
+    }
+}
+
+/* ============================================
+   PIE/DOUGHNUT CHART - Khusus Mobile
+   ============================================ */
+@media (max-width: 768px) {
+    /* Pie chart perlu ruang legend di bawah */
+    .chart-pie .chart-body {
+        height: 260px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-pie .chart-body {
+        height: 230px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .chart-pie .chart-body {
+        height: 200px !important;
+    }
+}
+
+/* ============================================
+   LAPORAN PAGE - Chart responsive
+   ============================================ */
+@media (max-width: 768px) {
+    .report-chart-card {
+        border-radius: var(--radius-md);
+    }
+
+    .report-chart-card .chart-header {
+        padding: 14px 16px 0 !important;
+    }
+
+    .report-chart-card .chart-body {
+        height: 220px !important;
+        padding: 10px 12px 14px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .report-chart-card .chart-body {
+        height: 190px !important;
+    }
+
+    /* Period controls di laporan */
+    .period-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .period-group {
+        width: 100%;
+    }
+
+    .period-group select {
+        width: 100%;
+    }
+}
+
+/* ============================================
+   RIWAYAT & TRANSAKSI - Mobile Filter
+   ============================================ */
+@media (max-width: 768px) {
+    .filters-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-group {
+        width: 100%;
+    }
+
+    .filter-group input,
+    .filter-group select {
+        width: 100%;
+    }
+
+    .filter-actions {
+        display: flex;
+        gap: 8px;
+    }
+
+    .filter-actions .btn {
+        flex: 1;
+    }
+}
+
+/* ============================================
+   HEADER - Overflow protection
+   ============================================ */
+@media (max-width: 480px) {
+    .top-header {
+        overflow: hidden;
+    }
+
+    .header-left {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .page-title {
+        overflow: hidden;
+    }
+
+    .page-title h1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 160px;
+    }
+
+    .header-right {
+        flex-shrink: 0;
+    }
+}
+
+/* ============================================
+   SECTION HEADER - Mobile stack
+   ============================================ */
+@media (max-width: 480px) {
+    .recent-transactions .section-header,
+    .report-table-card .section-header {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .section-header h2 {
+        font-size: 0.875rem;
+    }
+}
+
+/* ============================================
+   SMOOTH SCROLL & OVERFLOW
+   ============================================ */
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Mencegah konten meluber ke kanan di mobile */
+@media (max-width: 768px) {
+    .content-area {
+        overflow-x: hidden;
+        max-width: 100vw;
+    }
+}
+
+/* ============================================
+   LAPORAN PAGE - chart-card dalam report-charts
+   ============================================ */
+.report-charts .chart-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.report-charts .chart-body {
+    flex: 1;
+    min-height: 220px;
+}
+
+@media (max-width: 768px) {
+    .report-charts .chart-body {
+        min-height: 200px;
+        height: 220px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .report-charts .chart-body {
+        min-height: 180px;
+        height: 190px !important;
+    }
+    
+    /* Summary cards di laporan */
+    .report-cards {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .report-cards {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .report-charts .chart-body {
+        height: 165px !important;
+    }
+}
